@@ -2,24 +2,11 @@
 let spanHoras=document.querySelector('#hour');
 let spanMinutos=document.querySelector('#minutes');
 let spanSegundos=document.querySelector('#seconds');
-let modoEscuro= document.querySelector('#darkMode').value;
+let horas = document.querySelectorAll(".hours");
+let valorInputRange = ""
 
-
-
-document.querySelector('#darkMode').addEventListener('click',()=>{
-    let valor=innerHTML=document.querySelector('#darkMode').value
-    if(valor==='1'){
-         document.body.style.background="black"
-        
-        
-    }else{
-         document.body.style.background=""
-        
-    }
-});
 
 function atualizarHora(){
-
     let data = new Date();
     let hora = corrigirHora(data.getHours());
     let minutos = corrigirHora(data.getMinutes());
@@ -28,11 +15,30 @@ function atualizarHora(){
     spanMinutos.innerHTML=minutos
     spanSegundos.innerHTML=segundos
 }
+setInterval(atualizarHora,1000);
+
 function corrigirHora(numero){
     if(numero<10){
         numero+='0'
     }
     return numero
 }
-setInterval(atualizarHora,1000)
+
+document.querySelector('#darkMode').addEventListener('click',(valorInputRange)=>{
+    
+    valorInputRange=document.querySelector('#darkMode').value
+    
+    if(valorInputRange==='1'){
+        document.body.style.background="black"
+
+        for(let i=0;i<horas.length;i++){
+            horas[i].classList.add('darkMode');
+        }  
+    }else{
+        document.body.style.background=""    
+    }
+}); 
+
+
+
 
