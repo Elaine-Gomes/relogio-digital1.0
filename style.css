@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color:#fff;
+    overflow: hidden;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#darkModeContainer{
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#darkModeContainer [type='range']{
+    transform:scale(1.5) ;
+    appearance: none;
+    background-color: #93b9f788;
+    width: 50px;
+    height:18px;
+    border-radius:15px ;
+}
+[type='range']::-webkit-slider-thumb{
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 7px;
+    background-color: #faa4fa;  
+}
+
+.time{
+    font-family: 'Abril Fatface', cursive;;
+}
+.hours{
+    position: relative;
+    margin: 0 5px;
+    box-shadow:5px 5px 15px 5px rgba(0,0,0,0) ; 
+   -webkit-box-reflect:below 1px linear-gradient(transparent,#0004 ) ;
+}
+#clock .time .hours span{
+    position: relative;
+    margin: 2px;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow:5px 5px 15px 5px rgba(0, 0, 0, 0.431);
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8
+}
+#clock .time {
+    display: flex;
+}
+#hour,#minutes,#seconds{
+    font-size: 5em;
+}
+#seconds{
+    background-color:#ffc6ff;
+}
+.time .timeText1{
+    background-color:#faa4fa;
+}
+.timeText,.timeText1{
+    font-size: 3em;
+}
+span:nth-child(1){
+    background-color: #a0c4ff;
+    height: 170px;
+    width: 250px;
+}
+span:nth-child(2){
+    background-color:#79abfb;
+    height: 100px;
+    width: 250px;
+}
+.darkMode{
+    box-shadow:5px 5px 15px 5px rgba(253, 253, 253, 0.431);
+}
