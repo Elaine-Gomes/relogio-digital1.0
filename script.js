@@ -6,6 +6,7 @@ let horas = document.querySelectorAll(".hours");
 let valorInputRange = ""
 
 
+//Atualiza a hora de 1 em 1 segundo
 function atualizarHora(){
     let data = new Date();
     let hora = corrigirHora(data.getHours());
@@ -17,13 +18,15 @@ function atualizarHora(){
 }
 setInterval(atualizarHora,1000);
 
+//Acrescenta um zero na frente quando o numero é menor do que 10.
 function corrigirHora(numero){
     if(numero<10){
-        numero+='0'
+        numero='0'+numero
     }
     return numero
 }
 
+//Modo escuro
 document.querySelector('#darkMode').addEventListener('click',(valorInputRange)=>{
     
     valorInputRange=document.querySelector('#darkMode').value

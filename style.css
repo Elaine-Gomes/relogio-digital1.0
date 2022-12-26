@@ -39,11 +39,7 @@ main{
 .time{
     font-family: 'Abril Fatface', cursive;;
 }
-.hours{
-    position: relative;
-    margin: 0 5px;
-   -webkit-box-reflect:below 1px linear-gradient(transparent,#0004 ) ;
-}
+
 #clock .time {
     display: flex;
 }
@@ -60,6 +56,11 @@ main{
 }
 #hour,#minutes,#seconds{
     font-size: 5em;
+}
+.hours{
+    position: relative;
+    margin: 0 5px;
+   -webkit-box-reflect:below 1px linear-gradient(transparent,#0004 ) ;
 }
 #seconds{
     background-color:#ffc6ff;
@@ -80,7 +81,7 @@ span:nth-child(2){
     height: 100px;
     width: 250px;
 }
-/*Mudar para modo escuro*/
+/*Um box Shadow claro para colocar no modo escuro*/
 .darkMode{
     box-shadow:10px 3px 100px 3px rgba(243, 243, 243, 0.37);
 }
