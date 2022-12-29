@@ -3,10 +3,11 @@ let spanHoras=document.querySelector('#hour');
 let spanMinutos=document.querySelector('#minutes');
 let spanSegundos=document.querySelector('#seconds');
 let horas = document.querySelectorAll(".hours");
+let btnTheme = document.querySelector('.themeToggle');
 let valorInputRange = ""
 
 
-//Atualiza a hora de 1 em 1 segundo
+//Atualiza a hora 
 function atualizarHora(){
     let data = new Date();
     let hora = corrigirHora(data.getHours());
@@ -27,20 +28,22 @@ function corrigirHora(numero){
 }
 
 //Modo escuro
-document.querySelector('#darkMode').addEventListener('click',(valorInputRange)=>{
+function themeToggle(){
+    let body = document.querySelector('.body');
+    let relogio = document.querySelector('.clock')
+    let onOff = document.querySelector('.onOff')
+    let themeToggle = document.querySelector('.themeToggle')
+    console.log(body)
+    body.classList.toggle('darkTheme')
+    relogio.classList.toggle("darkTheme")
+    themeToggle.classList.toggle("active")
+    onOff.classList.toggle("active")
+  
+    horas.forEach(item => item.classList.toggle("darkTheme"))
     
-    valorInputRange=document.querySelector('#darkMode').value
-    
-    if(valorInputRange==='1'){
-        document.body.style.background="black"
+  }
+  btnTheme.addEventListener("click", themeToggle);
 
-        for(let i=0;i<horas.length;i++){
-            horas[i].classList.add('darkMode');
-        }  
-    }else{
-        document.body.style.background=""    
-    }
-}); 
 
 
 
